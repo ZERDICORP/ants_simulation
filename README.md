@@ -10,4 +10,3 @@
 ### Author's libraries used by this project:
 - [file.h](https://github.com/ZERDICORP/file-lib.git)
 - [athm.h](https://github.com/ZERDICORP/athm-lib.git)
-- [point.h](https://github.com/ZERDICORP/point-lib.git)

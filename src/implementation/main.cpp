@@ -48,7 +48,7 @@ int loop(sf::RenderWindow& window, std::map<std::string, float>& cfg)
 	/*
 		Anthill position.
 	*/
-	zer::Point<float> anthillPos(mWH * 0.2, mWW * 0.2);
+	sf::Vector2f anthillPos(mWW * 0.2, mWH * 0.2);
 
 	/*
 		Creation and filling array of Ant(...) objects.
@@ -58,7 +58,7 @@ int loop(sf::RenderWindow& window, std::map<std::string, float>& cfg)
 		i += (((int)cfg["antsQuantity"] / 360) == 0 ? 360 / ((int)cfg["antsQuantity"] % 360) : 1))
 	{
 		float fAngle = zer::athm::toRadians(i);
-		ants.push_back(Ant{false, fAngle, anthillPos.y + sin(fAngle), anthillPos.x + cos(fAngle), cfg["pheromoneConcentration"]});
+		ants.push_back(Ant{false, fAngle, anthillPos.y + (float)sin(fAngle), anthillPos.x + (float)cos(fAngle), cfg["pheromoneConcentration"]});
 	}
 
 	auto updatePhemap = [&fPheromonesDisappearanceRateInAir](std::vector<float>& phemap, int i){
